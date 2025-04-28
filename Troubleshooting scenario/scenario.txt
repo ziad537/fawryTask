@@ -1,0 +1,18 @@
+1)check if the machine has an ip address correctly.
+	command to do that ifconfig
+ 1.1)if the machine doesn't has an ip restart the networkmanager 
+	command to do that systemctl restart NetworkManager
+ 1.2)if it still doesn't get an ip we can assign ip manually
+	command to do that ip addr add 
+2)Now the machine has an ip let's check the network connection ( if it local network try to ping the server)
+	command to do that ping 8.8.8.8
+3)Now check the DNS 
+	command to do that ping google.com
+ 3.1) if the DNS doesn't work Compare resolution from /etc/resolv.conf DNS vs. 8.8.8.8.
+	command to do that sudo vim /etc/resolv.conf
+4) Diagnose Service Reachability: Confirm whether the web service (port 80 or 443) is reachable on the resolved IP.
+	command to do that sudo netstat -tuln
+ 4.1)if the port number was anything and you want to make it 80 (and you are using redhat system)
+	sudo vim /etc/httpd/conf/httpd.conf
+5)Now try to test internal.example.com
+	ping internal.example.com

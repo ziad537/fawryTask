@@ -1,0 +1,9 @@
+1)The script (mygrep.sh) handles the options as $1, patterns as $2 and file as $3.
+Used if statements to handle the options my scripts handles this options (-n, -v, -vn or -nv).
+all the commands have the -i option to search for a string (case insensitive)
+
+2)If i made my script use regex i will change the structure to use variables like:
+CASE_INSENSITIVE=true instead of -i.
+And i will check if regex is properly validated
+
+3)The hardest part in the script is to handle if the user doesn't include a pattern because i was using an if statement to check if the arguments are less than 2 or not so when the user entering a command that has option and file the detection of the pattern doesn't happen, and in the same time if i make the if statement to check less than 3 we will have another problem if the user just use the script normally with pattern and file only, so this was the hardest part.
